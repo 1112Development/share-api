@@ -1,0 +1,5 @@
+[run]
+include = shareography/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
