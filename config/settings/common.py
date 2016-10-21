@@ -266,3 +266,6 @@ except:
         api_key=env("CLOUDINARY_API_KEY"),
         api_secret=env('CLOUDINARY_API_SECRET')
     )
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 10484176
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10484176
