@@ -6,7 +6,7 @@ from django.db import models
 class Photo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     lat = models.FloatField(max_length=255, blank=False, null=False)
-    lng = models.FloatField(max_length=255, blank=False, null=False)
+    long = models.FloatField(max_length=255, blank=False, null=False)
     original = models.ImageField(max_length=1000, blank=False, null=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField(max_length=1000, blank=False, null=False)
