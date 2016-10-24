@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.utils.datetime_safe import datetime
 
 
 class Photo(models.Model):
@@ -10,6 +11,12 @@ class Photo(models.Model):
     original = models.ImageField(max_length=1000, blank=False, null=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     thumbnail = models.ImageField(max_length=1000, blank=False, null=False)
+    created = models.DateTimeField(editable=False)
+
+    def save(self, **kwargs):
+        if not self.created:
+            self.created = datetime.now()
+        super(Photo, self).save()
 
     def self_destruct(self):
         """Determine if photo should be deleted"""

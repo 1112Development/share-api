@@ -10,6 +10,7 @@ class PhotoSerializer(serializers.Serializer):
     long = serializers.FloatField(required=True)
     upload_at = serializers.DateTimeField(read_only=True)
     original = serializers.ImageField(max_length=1000)
+    created = serializers.DateTimeField(read_only=True)
 
     # dont need this field
     thumbnail = serializers.ImageField(max_length=1000, read_only=True)
@@ -21,7 +22,7 @@ class PhotoSerializer(serializers.Serializer):
         uploaded_image = validated_data.pop('original')
         image = cloudinary.uploader.upload(uploaded_image, eager=[
             {'width': 100, 'height': 150,
-             'crop': 'fit', 'format': 'jpg'}], folder='shareogrpahy')
+             'crop': 'fit', 'format': 'jpg'}], folder='shareapp')
         original = 'v1475946077' + '/' + image['public_id']
 
         #this is wrong!
