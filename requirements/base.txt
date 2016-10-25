@@ -40,9 +40,8 @@ pytz==2016.6.1
 django-redis==4.5.0
 redis>=2.10.5
 
-
-
-
+# Cloudinary
+cloudinary==1.4.0
 
 # Django Rest Framework
 djangorestframework==3.4.7
