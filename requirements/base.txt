@@ -42,7 +42,7 @@ redis>=2.10.5
 
 # Cloudinary==1.4.4
 -e git+https://github.com/cloudinary/pycloudinary.git@a808920feba89c46c82a24a908c66ea014f315e8#egg=cloudinary
-cloudinary==1.4.0
+# cloudinary==1.4.0
 
 # Django Rest Framework
 djangorestframework==3.4.7
