@@ -78,3 +78,4 @@ shareography/media/
 /config/settings/secrets.py
 .gitattributes
 .idea/
+python3
