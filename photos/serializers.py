@@ -16,6 +16,6 @@ class PhotoSerializer(serializers.Serializer):
         """
         Create and return a new `Photo` instance, given the validated data.
         """
-        original = cloudinary.uploader.upload(validated_data.pop('original'), folder='shareapp')
+        validated_data['original'] = cloudinary.uploader.upload(validated_data.pop('original'), folder='shareapp')
 
         return Photo.objects.create(**validated_data)
