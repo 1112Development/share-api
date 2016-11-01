@@ -13,6 +13,7 @@ Local settings
 import os
 import socket
 
+from config.settings import secrets as secrets
 from .common import *  # noqa
 
 # DEBUG
@@ -72,3 +73,10 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+
+cloudinary.config(
+    cloud_name=secrets.CLOUDINARY_CLOUD_NAME,
+    api_key=secrets.CLOUDINARY_API_KEY,
+    api_secret=secrets.CLOUDINARY_API_SECRET,
+)

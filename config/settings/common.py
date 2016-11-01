@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
 
-import cloudinary
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (shareography/config/settings/common.py - 3 = shareography/)
@@ -253,20 +252,7 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
-try:
-    from .secrets import *
 
-    cloudinary.config(
-        cloud_name=CLOUDINARY_CLOUD_NAME,
-        api_key=CLOUDINARY_API_KEY,
-        api_secret=CLOUDINARY_API_SECRET,
-    )
-except:
-    cloudinary.config(
-        cloud_name=env("CLOUDINARY_CLOUD_NAME"),
-        api_key=env("CLOUDINARY_API_KEY"),
-        api_secret=env('CLOUDINARY_API_SECRET')
-    )
 
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10484176
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10484176
